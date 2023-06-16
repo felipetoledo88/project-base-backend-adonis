@@ -6,7 +6,8 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import Database from '@ioc:Adonis/Lucid/Database'
 
-Route.get('hello', async () => {
-  return { teste123: 'hello-world' }
+Route.get('hello-world', async () => {
+  return Database.from('users').select('*')
 }).prefix('/api')
